@@ -1,0 +1,58 @@
+<p>roles works!</p>
+
+<!-- interpolation -->
+<p>firstName: {{firstName}}</p>
+<p>version: {{version}}</p>
+<p>currentDate: {{currentDate}}</p>
+
+<!-- checking if bootstrap classes are applied -->
+<div class="row">
+    <div class="col-3">
+        <p>{{version}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{firstName}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{currentDate}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{selectedState}}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <!-- property binding: dynamic data binding, meaning if the firstName variable changes in the component, 
+         the value in the input field will automatically update to reflect that new value -->
+        <input type="text" [value]="firstName" class="form-control" />
+    </div>
+
+    <!-- Two way data binding (ngModel) can be only used in input field -->
+    <div class="col-3">
+        <input type="text" [(ngModel)]="firstName" />
+    </div>
+
+    <!-- dynamic type -->
+    <div class="col-3">
+        <input [type]="inputType" />
+    </div>
+
+    <div class="col-3">
+        <select [(ngModel)]="selectedState">
+            <option value="KA">KA</option>
+            <option value="MH">MH</option>
+            <option value="Goa">Goa</option>
+        </select>
+    </div>
+</div>
+
+<!-- event binding -->
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcomeAlert()">Show Alert</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcomeMessage('Hello ' + firstName)">Show Alert with Message</button>
+    </div>
+</div>
