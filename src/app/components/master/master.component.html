@@ -1,4 +1,21 @@
 <div class="row">
+    <div class="col">
+        <button 
+            type="button" 
+            class="btn btn-primary" 
+            (click)="showBasics()"
+        >
+            Basics
+        </button>
+    </div>
+    <div class="row">
+        <div class="col" *ngIf="displayBasics">
+            <app-basics></app-basics>
+        </div>
+    </div>
+    
+</div>
+<div class="row">
     <div class="col-12 text-center">
         <div class="btn-group">
             <button 
