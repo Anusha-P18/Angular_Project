@@ -1,1 +1,21 @@
-<p>roles works!</p>
+<div class="row">
+    <div class="col-4">
+        <ol>
+            <li *ngFor="let data of roleList">
+                {{data.role}}
+            </li>
+        </ol>
+    </div>
+    <div class="col-4">
+        <select>
+            <option *ngFor="let role of roleList" [value]="role.roleId">
+                {{role.role}}
+            </option>
+        </select>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-warning mx-2" *ngFor="let role of roleList">
+            {{role.role}}
+        </button>
+    </div>
+</div>
