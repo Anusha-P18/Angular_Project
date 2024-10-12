@@ -17,10 +17,10 @@ export class DesignationComponent implements OnInit {
   http = inject(HttpClient);
 
   ngOnInit(): void {
-    
+    this.getAllDesignation()
   }
 
-  getAllRoles() {
+  getAllDesignation() {
     this.masterService.getDesignations().subscribe((res: APIResponseModel) => {
       this.designationList = res.data;
     }, error => {
